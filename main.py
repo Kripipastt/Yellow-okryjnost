@@ -3,13 +3,13 @@ import sys
 
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5 import uic
+from UI import Ui_MainWindow
 
 
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.rep)
 
     def rep(self):
@@ -24,7 +24,7 @@ class Example(QMainWindow):
     def draw_flag(self, qp):
         x, y = random.randint(0, 300), random.randint(0, 300)
         rad = random.randint(10, 200)
-        qp.setPen(QColor(255, 255, 0))
+        qp.setPen(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         qp.drawEllipse(x, y, 2 * rad, 2 * rad)
 
 
