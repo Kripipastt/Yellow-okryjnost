@@ -25,7 +25,7 @@ class Example(QMainWindow, Ui_MainWindow):
         x, y = random.randint(0, 300), random.randint(0, 300)
         rad = random.randint(10, 200)
         qp.setPen(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
-        qp.drawEllipse(x, y, 2 * rad, 2 * rad)
+        qp.drawEllipse(x, y, 3 * rad, 3 * rad)
 
 
 if __name__ == '__main__':
